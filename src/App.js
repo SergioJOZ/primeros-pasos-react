@@ -1,8 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import MiComponente from './MiComponente';
+import logo from "./logo.svg";
+import "./App.css";
+import MiComponente from "./MiComponente";
+import { SegundoComponente } from "./SegundoComponente";
+import { TercerComponente } from "./TercerComponente";
 
 function App() {
+  const fichaMedica = {
+    altura: "175cm",
+    grupo: "A",
+    estado: "Bien",
+    alergias: "ninguna",
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,10 +21,15 @@ function App() {
         </p>
 
         {/* Cargar mi primer componente */}
-      <MiComponente />
+        <div className="componentes">
+          <hr />
+          <TercerComponente ficha={fichaMedica} />
+          <hr />
+          <SegundoComponente />
+          <hr />
+          <MiComponente />
+        </div>
       </header>
-
-
     </div>
   );
 }
